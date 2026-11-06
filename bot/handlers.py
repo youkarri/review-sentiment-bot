@@ -2,7 +2,7 @@ from aiogram import Router
 from aiogram.filters import Command
 from aiogram.types import Message
 
-from ml.predict import predict
+from ml.sentiment import predict, LABEL_RU
 
 router = Router()
 
@@ -31,4 +31,7 @@ async def handle_text(message: Message):
         await message.answer("Пожалуйста, отправь текстовое сообщение.")
         return
     label, confidence = predict(message.text)
-    await message.answer(f"Тональность: {label}\nУверенность: {confidence:.0%}")
+    await message.answer(
+        f"Тональность: {LABEL_RU.get(label, label)}\n"
+        f"Уверенность: {confidence:.0%}"
+    )
