@@ -26,7 +26,7 @@ def _label(model, idx: int) -> str:
 
 
 def predict_batch(texts: list[str], batch_size: int = 32) -> list[tuple[str, float]]:
-    """Для файлов с отзывами (CSV/TXT) - быстрее, чем по одному."""
+    """Для файлов с отзывами (CSV/TXT) быстрее, чем по одному."""
     tok, model = _load()
     cleaned = [clean_text(t) for t in texts]
     results = []

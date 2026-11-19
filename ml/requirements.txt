@@ -1,0 +1,6 @@
+datasets==5.1.0
+emoji==2.16.0
+pandas==3.0.3
+scikit-learn==1.9.1
+torch==2.15.0+cpu
+transformers==5.19.0
